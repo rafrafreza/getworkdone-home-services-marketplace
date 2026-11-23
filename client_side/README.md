@@ -1,29 +1,11 @@
-# client_side
+# GetWorkDone - Client
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+Vue 3 single-page app for the GetWorkDone home services marketplace. See the [root README](../README.md) for the full project overview.
 
 ```sh
 npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build in dist/
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+The app expects the Flask API on `http://127.0.0.1:5000`.

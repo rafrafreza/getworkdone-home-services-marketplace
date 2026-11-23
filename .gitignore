@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Environment
+.env
+
+# Local data and runtime artifacts
+*.db
+*.sqlite3
+dump.rdb
+celerybeat-schedule*
+server_side/backend/static/*.csv
+server_side/static/uploads/
+
+# Node
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/

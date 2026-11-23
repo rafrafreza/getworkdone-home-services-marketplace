@@ -90,7 +90,6 @@ def prof_month_report():
             # Create email message
             msg = Message(
                 "Your Monthly Service Activity Report",
-                sender="rezakne55@gmail.com",
                 recipients=[professional.email]
             )
             msg.html = email_html  # Set HTML content
@@ -126,7 +125,6 @@ def pending_req():
 
             msg = Message(
                 "Daily Reminder: Pending Service Requests",
-                sender="rezakne55@gmail.com",
                 recipients=[professional.email]
             )
             msg.html = email_html

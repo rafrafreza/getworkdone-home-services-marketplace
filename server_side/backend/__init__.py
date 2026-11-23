@@ -11,10 +11,10 @@ from backend.cache import cache
 
 def create_app():
     GetWorkDone = Flask(__name__)
-    GetWorkDone.config['SECRET_KEY'] = "This is secret key...R3"
+    GetWorkDone.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev-secret-key")
     GetWorkDone.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///GetWorkDone.db'
     GetWorkDone.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-    GetWorkDone.config['JWT_SECRET_KEY'] = 'R3_jwt_secret_key...'
+    GetWorkDone.config['JWT_SECRET_KEY'] = os.environ.get("JWT_SECRET_KEY", "dev-jwt-secret-key")
     GetWorkDone.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(days=7)  # Token expiration time
     GetWorkDone.config["UPLOAD_FOLDER"] =  os.path.join(os.getcwd(), "static/uploads")
     # Enable CORS for all routes
@@ -24,8 +24,9 @@ def create_app():
     GetWorkDone.config["MAIL_SERVER"] = "smtp.gmail.com"
     GetWorkDone.config["MAIL_PORT"] = 587
     GetWorkDone.config["MAIL_USE_TLS"] = True
-    GetWorkDone.config["MAIL_USERNAME"] = "rezakne55@gmail.com"
-    GetWorkDone.config["MAIL_PASSWORD"] = "nxdjltxfzzhcdmai"
+    GetWorkDone.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME")
+    GetWorkDone.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
+    GetWorkDone.config["MAIL_DEFAULT_SENDER"] = os.environ.get("MAIL_DEFAULT_SENDER", os.environ.get("MAIL_USERNAME"))
     
     mail.init_app(GetWorkDone)  # Initialize Flask-Mail with app
 
